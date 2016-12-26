@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/mainFrame">
+
+    <ImageButton
+        android:id="@+id/flashlight_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:layout_gravity="center"
+        android:src="@drawable/flashlight_off" />
+
+    <CheckBox
+        android:text="Run in Background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:id="@+id/checkBox" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayout"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</FrameLayout>
