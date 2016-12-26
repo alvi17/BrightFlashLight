@@ -80,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
         flashLightButton = (ImageButton)findViewById(R.id.flashlight_button);
         flashLightButton.setOnClickListener(new FlashOnOffListener());
         checkBox=(CheckBox)findViewById(R.id.checkBox);
-
+        if(Util.getInfo(getApplicationContext(),"background"))
+        {
+            checkBox.setChecked(true);
+        }
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -88,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 Util.saveInfo(getApplicationContext(),"background",b);
                 if(b)
                 {
-                    serviceIntent.putExtra("background",b);
-                    startService(serviceIntent);
+//                    serviceIntent.putExtra("background",b);
+//                    startService(serviceIntent);
 //                    bindService(serviceIntent, flashServiceConnection, BIND_IMPORTANT);
                 }
             }
@@ -103,23 +106,22 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
         layout.addView(adView);
-        fm.addView(layout);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(Util.getInfo(getApplicationContext(),"background"))
-        {
-            checkBox.setChecked(true);
-        }
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        serviceIntent = new Intent(MainActivity.this, FlashLightService.class);
-        startService(serviceIntent);
+        if(!Util.isServiceRunning(getApplicationContext(),FlashLightService.class.getName())) {
+            serviceIntent = new Intent(MainActivity.this, FlashLightService.class);
+            startService(serviceIntent);
+        }
     }
 
     private class FlashOnOffListener implements View.OnClickListener{

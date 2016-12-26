@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Bright Flash Light</string>
+    <string name="app_name">Bright Torch Light</string>
+    <string name="run_in_back">Run in Background</string>
 </resources>

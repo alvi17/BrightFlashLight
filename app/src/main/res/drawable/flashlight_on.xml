@@ -5,14 +5,14 @@
   <item>
     <shape android:shape="oval">
       <size android:width="200dp" android:height="200dp" />
-      <gradient android:angle="90" android:startColor="#f4f4f4" android:endColor="#b9b9b9" />
+      <gradient android:angle="90" android:startColor="#f4f4f4" android:endColor="#98da85" />
     </shape>
   </item>
 
   <!-- Inset -->
   <item android:top="1dp" android:left="1dp" android:right="1dp" android:bottom="1dp">
       <shape android:shape="oval">
-        <gradient android:angle="90" android:startColor="#dcdcdc" android:endColor="#c9c9c9" />
+        <gradient android:angle="90" android:startColor="#dcdcdc" android:endColor="#73ba72" />
       </shape>
   </item>
 
