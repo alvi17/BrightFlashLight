@@ -33,6 +33,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent serviceIntent;
     FlashLightService flashLightService;
     CheckBox checkBox;
+    TextView trun_on_off;
 
     private final ServiceConnection flashServiceConnection = new ServiceConnection() {
         @Override
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        trun_on_off=(TextView)findViewById(R.id.turn_on_off);
+
 
         fm=(FrameLayout)findViewById(R.id.mainFrame);
         adView = new AdView(this);
@@ -121,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
         if(!Util.isServiceRunning(getApplicationContext(),FlashLightService.class.getName())) {
             serviceIntent = new Intent(MainActivity.this, FlashLightService.class);
             startService(serviceIntent);
+            trun_on_off.setText(getResources().getString(R.string.turn_off));
+    }
+        else
+        {
+            trun_on_off.setText(getResources().getString(R.string.turn_on));
         }
     }
 
@@ -136,12 +145,14 @@ public class MainActivity extends AppCompatActivity {
                 serviceIntent = new Intent(MainActivity.this, FlashLightService.class);
                 startService(serviceIntent);
                 isFlashLightOn = false;
+                trun_on_off.setText(getResources().getString(R.string.turn_off));
             }else{
                 flashLightButton.setImageResource(R.drawable.flashlight_on);
 //                mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_OFF);
 //                mSession.setRepeatingRequest(mBuilder.build(), null, null);
                 stopService(serviceIntent);
                 isFlashLightOn = true;
+                trun_on_off.setText(getResources().getString(R.string.turn_on));
             }
             } catch (Exception e) {
                 e.printStackTrace();
