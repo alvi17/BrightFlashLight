@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bright TorchLight</string>
+    <string name="app_name">TorchLight</string>
     <string name="run_in_back">Run in Background</string>
     <string name="turn_on">Turn ON</string>
     <string name="turn_off">Trun OFF</string>
