@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">উজ্জ্বল টর্চ লাইট</string>
+    <string name="run_in_back">ব্যাক গ্রাউন্ড এ চালু রাখুন</string>
+    <string name="turn_on">অন করুন</string>
+    <string name="turn_off">অফ করুন</string>
+    <string name="grant">অনুমতি দিন</string>
+    <string name="details">ক্যামেরা ফ্লাশ ব্যবহার এর অনুমতি দিন..</string>
+    <string name="ok">ওকে</string>
+</resources>

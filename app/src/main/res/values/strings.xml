@@ -3,4 +3,7 @@
     <string name="run_in_back">Run in Background</string>
     <string name="turn_on">Turn ON</string>
     <string name="turn_off">Trun OFF</string>
+    <string name="grant">Grant Access</string>
+    <string name="details">Access to Camera Flash is required.</string>
+    <string name="ok">OK</string>
 </resources>
